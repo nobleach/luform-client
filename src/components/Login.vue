@@ -7,6 +7,7 @@
             <el-button>Cancel</el-button>
             <el-button type="primary" v-on:click="logIn" v-bind:disabled="username === ''" v-bind:loading="loading">{{loadingButtonText}}</el-button>
         </form>
+        <p class="register">Don't have a login? <router-link to="/register">Create one.</router-link></p>
     </el-card>
 </template>
 
@@ -31,6 +32,9 @@ export default {
 </script>
 
 <style lang="css">
+    body {
+        background: rgb(52, 89, 152);
+    }
     .box-card {
         margin: 0 auto;
         width: 480px;
