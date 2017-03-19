@@ -19,4 +19,14 @@ export default {
     color: #2c3e50;
     margin-top: 60px;
 }
+
+.el-alert {
+    margin: 0 auto 30px auto;
+    width: 482px;
+}
+
+.el-alert__title {
+    display: inline-block;
+    padding-right: 10px;
+}
 </style>

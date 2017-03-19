@@ -9,6 +9,8 @@ Vue.use(Vuex);
 const state = {
     registration: {
         submitting: false,
+        errorText: '',
+        buttonText: 'Register',
         formValues: {}
     },
     login: {
