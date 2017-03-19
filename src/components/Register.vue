@@ -18,7 +18,7 @@
                 <el-input class="registration-input" placeholder="Retype your password" type="password" v-model="ruleForm.confirmPassword"></el-input>
             </el-form-item>
             <el-button>Cancel</el-button>
-            <el-button type="primary" v-on:click="submitRegistration" v-bind:disabled="username === ''" v-bind:loading="loading">{{loadingButtonText}}</el-button>
+            <el-button type="primary" v-on:click="submitRegistration" v-bind:disabled="ruleForm.email === ''" v-bind:loading="loading">{{loadingButtonText}}</el-button>
         </el-form>
     </el-card>
 </template>
