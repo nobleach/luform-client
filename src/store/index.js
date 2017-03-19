@@ -1,12 +1,26 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import * as actions from './actions';
+import * as getters from './getters';
+import { mutations } from './mutations';
 
 Vue.use(Vuex);
 
+const state = {
+    registration: {
+        submitting: false,
+        formValues: {}
+    },
+    login: {
+        submitting: false
+    }
+};
+
 const store = new Vuex.Store({
-  state: {
-    safelyStoredNumber: 0
-  }
+  state,
+  actions,
+  getters,
+  mutations
 });
 
 export default store;

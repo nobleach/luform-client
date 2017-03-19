@@ -18,7 +18,7 @@
                 <el-input class="registration-input" placeholder="Retype your password" type="password" v-model="ruleForm.confirmPassword"></el-input>
             </el-form-item>
             <el-button>Cancel</el-button>
-            <el-button type="primary" v-on:click="submitRegistration" v-bind:disabled="ruleForm.email === ''" v-bind:loading="loading">{{loadingButtonText}}</el-button>
+            <el-button type="primary" v-on:click="submitRegistration" v-bind:disabled="ruleForm.email === ''" v-bind:loading="submitting">{{loadingButtonText}}</el-button>
         </el-form>
     </el-card>
 </template>
@@ -26,6 +26,11 @@
 <script>
 export default {
     name: 'Register',
+    computed: {
+        submitting() {
+            return this.$store.state.registration.submitting;
+        }
+    },
     data() {
         return {
             ruleForm: {
@@ -48,15 +53,15 @@ export default {
                     { required: true, message: 'Please input your email address', trigger: 'blur' }
                 ]
             },
-            loadingButtonText: 'Register',
-            loading: false
+            loadingButtonText: 'Register'
         };
     },
     methods: {
         submitRegistration() {
-            this.loading = true;
-            this.loadingButtonText = 'Submitting...';
-            console.log(JSON.stringify(this.ruleForm));
+            // this.loading = true;
+            // this.loadingButtonText = 'Submitting...';
+            // console.log(JSON.stringify(this.ruleForm));
+            this.$store.dispatch('sendRegistration', this.ruleForm);
         }
     }
 };
