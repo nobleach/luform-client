@@ -9,11 +9,13 @@ export const mutations = {
     [REGISTRATION_SUBMIT](state, payload) {
         state.registration.submitting = true;
         state.registration.buttonText = 'Submitting';
+        state.registration.errorText = '';
     },
 
     [REGISTRATION_SUCCESS](state, payload) {
         state.registration.submitting = false;
         state.registration.buttonText = 'Register';
+        state.registration.errorText = '';
     },
 
     [REGISTRATION_FAILURE](state, error) {
