@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="">
+    <div class="registration-container">
         <el-alert
             v-if="errorText !== ''"
             :title="errorText"
