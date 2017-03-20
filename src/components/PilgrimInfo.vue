@@ -157,7 +157,7 @@
                                  Medical necessary Diets (i.e. vegetarian, no salt, diabetic, gluten free, etc...)
                             </el-checkbox>
                             <el-checkbox label="medical">
-                                <div class="special-need-label">
+                                <div class="special-needs-label">
                                     Medical / Physical Requirements (ie: cpap
                                     machine &amp; plug, language or hearing
                                     assistance, medications at a specific time,
@@ -225,6 +225,7 @@ export default {
                 firstname: '',
                 lastname: '',
                 email: '',
+                state: '',
                 bestcalltime: '',
                 over18: false,
                 maritalstatus: '',
