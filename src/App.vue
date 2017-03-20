@@ -1,6 +1,9 @@
 <template>
     <div id="app">
         <router-view></router-view>
+        <div class="footer">
+            &copy; 2017 http://artisticrevolution.com
+        </div>
     </div>
 </template>
 
@@ -28,5 +31,10 @@ export default {
 .el-alert__title {
     display: inline-block;
     padding-right: 10px;
+}
+
+.footer {
+    color: rgb(203, 218, 227);
+    margin: 20px 0;
 }
 </style>
