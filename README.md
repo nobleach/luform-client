@@ -1,8 +1,8 @@
-# timecard-client
+# Luform-Client
 
-> Timecard clien
+> Luform Client
 
-## Build Setup
+## build setup
 
 ``` bash
 # install dependencies
@@ -24,4 +24,4 @@ npm run unit
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+for detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
