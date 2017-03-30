@@ -8,3 +8,7 @@ export function createLogin(formValues) {
 export function logIn(formValues) {
     return axios.post(`${config.urlBase}/login`, formValues);
 }
+
+export function getPilgrimsForSponsorId(sponsorId) {
+    return axios.get(`${config.urlBase}/sponsors/${sponsorId}`);
+}

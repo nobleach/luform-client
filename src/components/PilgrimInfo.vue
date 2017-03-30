@@ -13,11 +13,11 @@
                     <el-col :span="24">
                         <el-select v-model="value" placeholder="Select your sponsor">
                             <el-option
-                            v-for="sponsor in sponsors"
-                            :label="sponsor.label"
-                            :value="sponsor.value">
-                        </el-option>
-                    </el-select>
+                                v-for="sponsor in sponsors"
+                                :label="sponsor.label"
+                                :value="sponsor.value">
+                            </el-option>
+                        </el-select>
                     </el-col>
                 </el-row>
                 <el-row :gutter="20">

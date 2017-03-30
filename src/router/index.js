@@ -16,7 +16,7 @@ export default new Router({
             component: PilgrimInfo
         },
         {
-            path: '/sponsor/:sponsorId',
+            path: '/sponsor/:sponsor_id',
             name: 'Sponsor a Pilgrim',
             component: SponsorInfo
         },
