@@ -15,7 +15,8 @@ const state = {
     },
     login: {
         submitting: false
-    }
+    },
+    sponsors: []
 };
 
 const store = new Vuex.Store({

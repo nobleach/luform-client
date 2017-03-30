@@ -211,6 +211,11 @@ import { states } from './states';
 
 export default {
     name: 'PilgrimInfo',
+    computed: {
+        sponsorsList() {
+            return this.$store.state.sponsors;
+        }
+    },
     data() {
         return {
             states,
@@ -245,6 +250,14 @@ export default {
                 ]
             }
         };
+    },
+    created() {
+        this.$store.dispatch('getSponsorsList', this.ruleForm);
+    },
+    methods: {
+        submitRegistration() {
+            this.$store.dispatch('sendRegistration', this.ruleForm);
+        }
     }
 };
 </script>

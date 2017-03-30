@@ -9,3 +9,7 @@ export const getRegisterButtonText = state => {
 export const getRegistrationErrorText = state => {
     return state.registration.errorText;
 };
+
+export const getSponsors = state => {
+    return state.sponsors;
+};
