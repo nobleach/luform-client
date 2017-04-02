@@ -1,8 +1,8 @@
 <template lang="html">
     <div class="pilgrim-info-container">
         <el-alert
-            v-if="errorText !== ''"
-            :title="errorText"
+            v-if="getErrorText !== ''"
+            :title="getErrorText"
             type="error"
             show-icon>
         </el-alert>
@@ -220,6 +220,9 @@ export default {
         },
         submitting() {
             return this.$store.getters.getIsPilgrimFormSubmitting;
+        },
+        getErrorText() {
+            return this.$store.getters.getPilgrimFormErrorText;
         }
     },
     data() {

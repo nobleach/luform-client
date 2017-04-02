@@ -2,7 +2,7 @@ import {
     REGISTRATION_FAILURE,
     REGISTRATION_SUBMIT,
     REGISTRATION_SUCCESS,
-    SPONSOR_LOAD,
+    SPONSORS_LOAD,
     SPONSORS_LOAD_FAIL,
     SPONSORS_LOAD_SUCCESS
 } from './mutation-types';
@@ -27,10 +27,11 @@ export const mutations = {
         state.registration.buttonText = 'Register';
     },
 
-    [SPONSOR_LOAD](state, payload) {
+    [SPONSORS_LOAD](state, payload) {
         state.sponsors.loading = true;
         state.sponsors.loaded = false,
         state.sponsors.names = [];
+        state.sponsors.errorText = '';
     },
 
     [SPONSORS_LOAD_FAIL](state, payload) {
@@ -43,7 +44,7 @@ export const mutations = {
         state.sponsors.loading = false,
         state.sponsors.loaded = true,
         state.sponsors.names = payload.data;
-        state.sponsors.errorText = ''
+        state.sponsors.errorText = '';
     }
     /* eslint-enable */
 };

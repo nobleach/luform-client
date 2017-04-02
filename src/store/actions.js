@@ -6,6 +6,7 @@ import {
     REGISTRATION_FAILURE,
     REGISTRATION_SUBMIT,
     REGISTRATION_SUCCESS,
+    SPONSORS_LOAD,
     SPONSORS_LOAD_FAIL,
     SPONSORS_LOAD_SUCCESS
 } from './mutation-types';
@@ -28,7 +29,7 @@ export const sendRegistration = ({ commit }, payload) => {
 };
 
 export const getSponsorsList = ({ commit }) => {
-    // commit(SPONSORS_LOAD);
+    commit(SPONSORS_LOAD);
     getSponsors()
         .then(response => {
             if (response.data) {
@@ -41,7 +42,4 @@ export const getSponsorsList = ({ commit }) => {
         .catch(error => {
             commit(SPONSORS_LOAD_FAIL, error);
         });
-};
-
-export const sendPilgrimRegistration = ({ commit }, payload) => {
 };
