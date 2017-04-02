@@ -11,11 +11,11 @@
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="pilgrim-info-form">
                 <el-row :gutter="20">
                     <el-col :span="24">
-                        <el-select v-model="value" placeholder="Select your sponsor">
+                        <el-select v-model="ruleForm.sponsor" placeholder="Select your sponsor">
                             <el-option
-                                v-for="sponsor in sponsors"
-                                :label="sponsor.label"
-                                :value="sponsor.value">
+                                v-for="sponsor in sponsorsList"
+                                :label="sponsor.fullname"
+                                :value="sponsor.id">
                             </el-option>
                         </el-select>
                     </el-col>
@@ -213,7 +213,7 @@ export default {
     name: 'PilgrimInfo',
     computed: {
         sponsorsList() {
-            return this.$store.state.sponsors;
+            return this.$store.state.sponsors.names;
         }
     },
     data() {
@@ -234,7 +234,8 @@ export default {
                 bestcalltime: '',
                 over18: false,
                 maritalstatus: '',
-                specialneeds: []
+                specialneeds: [],
+                sponsor: ''
             },
             rules: {
                 firstname: [

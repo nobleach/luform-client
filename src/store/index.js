@@ -16,7 +16,12 @@ const state = {
     login: {
         submitting: false
     },
-    sponsors: []
+    sponsors: {
+        loading: false,
+        loaded: false,
+        errorText: '',
+        names: []
+    }
 };
 
 const store = new Vuex.Store({
