@@ -174,7 +174,7 @@
                             type="textarea"
                             :rows="8"
                             placeholder="Applicant - Please tell us why you would like to attend Cursillo and list in detail your current involvement within your church:"
-                            v-model="ruleForm.reasontoattent">
+                            v-model="ruleForm.reasontoattend">
                         </el-input>
                     </el-col>
                 </el-row>
@@ -200,7 +200,7 @@
                     </el-col>
                 </el-row>
                 <el-button>Cancel</el-button>
-                <el-button type="primary" v-on:click="submitRegistration" v-bind:disabled="ruleForm.email === ''" v-bind:loading="submitting">{{buttonText}}</el-button>
+                <el-button type="primary" v-on:click="submitPilgrimRegistration" v-bind:disabled="ruleForm.email === ''" v-bind:loading="submitting">{{getSubmitButtonText}}</el-button>
             </el-form>
         </el-card>
     </div>
@@ -213,7 +213,13 @@ export default {
     name: 'PilgrimInfo',
     computed: {
         sponsorsList() {
-            return this.$store.state.sponsors.names;
+            return this.$store.getters.getSponsors;
+        },
+        getSubmitButtonText() {
+            return this.$store.getters.getPilgrimSubmitButtonText;
+        },
+        submitting() {
+            return this.$store.getters.getIsPilgrimFormSubmitting;
         }
     },
     data() {
@@ -235,7 +241,8 @@ export default {
                 over18: false,
                 maritalstatus: '',
                 specialneeds: [],
-                sponsor: ''
+                sponsor: '',
+                signed: ''
             },
             rules: {
                 firstname: [
@@ -256,8 +263,8 @@ export default {
         this.$store.dispatch('getSponsorsList', this.ruleForm);
     },
     methods: {
-        submitRegistration() {
-            this.$store.dispatch('sendRegistration', this.ruleForm);
+        submitPilgrimRegistration() {
+            this.$store.dispatch('sendPilgrimRegistration', this.ruleForm);
         }
     }
 };

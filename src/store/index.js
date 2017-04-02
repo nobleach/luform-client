@@ -17,6 +17,7 @@ const state = {
         submitting: false
     },
     sponsors: {
+        buttonText: 'Submit',
         loading: false,
         loaded: false,
         errorText: '',

@@ -11,5 +11,13 @@ export const getRegistrationErrorText = state => {
 };
 
 export const getSponsors = state => {
-    return state.sponsors;
+    return state.sponsors.names;
+};
+
+export const getPilgrimSubmitButtonText = state => {
+    return state.sponsors.buttonText;
+};
+
+export const getIsPilgrimFormSubmitting = state => {
+    return state.sponsors.loading;
 };

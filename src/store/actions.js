@@ -42,3 +42,6 @@ export const getSponsorsList = ({ commit }) => {
             commit(SPONSORS_LOAD_FAIL, error);
         });
 };
+
+export const sendPilgrimRegistration = ({ commit }, payload) => {
+};
