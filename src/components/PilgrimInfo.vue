@@ -11,7 +11,7 @@
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="pilgrim-info-form">
                 <el-row :gutter="20">
                     <el-col :span="24">
-                        <el-select v-model="ruleForm.sponsor" placeholder="Select your sponsor">
+                        <el-select v-model="ruleForm.sponsorid" placeholder="Select your sponsor">
                             <el-option
                                 v-for="sponsor in sponsorsList"
                                 :label="sponsor.fullname"
@@ -180,7 +180,7 @@
                 </el-row>
                 <el-row :gutter="20">
                     <el-col :span="24">
-                        <el-input class="registration-input" placeholder="Signature: Please type your full name" v-model="ruleForm.signed"></el-input>
+                        <el-checkbox v-model="ruleForm.signed">I agree that the above information is correct</el-checkbox>
                     </el-col>
                 </el-row>
                 <el-row :gutter="20">
@@ -244,8 +244,8 @@ export default {
                 over18: false,
                 maritalstatus: '',
                 specialneeds: [],
-                sponsor: '',
-                signed: ''
+                sponsorid: '',
+                signed: false
             },
             rules: {
                 firstname: [

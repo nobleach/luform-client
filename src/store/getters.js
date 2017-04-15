@@ -15,13 +15,13 @@ export const getSponsors = state => {
 };
 
 export const getPilgrimSubmitButtonText = state => {
-    return state.sponsors.buttonText;
+    return state.pilgrimRegistration.buttonText;
 };
 
 export const getIsPilgrimFormSubmitting = state => {
-    return state.sponsors.loading;
+    return state.pilgrimRegistration.loading;
 };
 
 export const getPilgrimFormErrorText = state => {
-    return state.sponsors.errorText;
+    return state.pilgrimRegistration.errorText;
 };

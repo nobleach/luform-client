@@ -16,3 +16,7 @@ export function getSponsors() {
 export function getPilgrimsForSponsorId(sponsorId) {
     return axios.get(`${config.urlBase}/sponsors/${sponsorId}`);
 }
+
+export function createPilgrimRegistration(formValues) {
+    return axios.post(`${config.urlBase}/pilgrims`, formValues);
+}

@@ -22,6 +22,12 @@ const state = {
         loaded: false,
         errorText: '',
         names: []
+    },
+    pilgrimRegistration: {
+        buttonText: 'Register',
+        loading: false,
+        loaded: false,
+        errorText: ''
     }
 };
 

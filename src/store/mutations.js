@@ -1,4 +1,7 @@
 import {
+    PILGRIM_REGISTRATION_SUBMIT,
+    PILGRIM_REGISTRATION_SUCCESS,
+    PILGRIM_REGISTRATION_FAILURE,
     REGISTRATION_FAILURE,
     REGISTRATION_SUBMIT,
     REGISTRATION_SUCCESS,
@@ -9,6 +12,24 @@ import {
 
 export const mutations = {
     /* eslint-disable */
+    [PILGRIM_REGISTRATION_SUBMIT](state, payload) {
+        state.pilgrimRegistration.submitting = true;
+        state.pilgrimRegistration.buttonText = 'Submitting';
+        state.pilgrimRegistration.errorText = '';
+    },
+
+    [PILGRIM_REGISTRATION_SUCCESS](state, payload) {
+        state.pilgrimRegistration.submitting = false;
+        state.pilgrimRegistration.buttonText = 'Register';
+        state.pilgrimRegistration.errorText = '';
+    },
+
+    [PILGRIM_REGISTRATION_FAILURE](state, error) {
+        state.pilgrimRegistration.errorText = error;
+        state.pilgrimRegistration.submitting = false;
+        state.pilgrimRegistration.buttonText = 'Register';
+    },
+
     [REGISTRATION_SUBMIT](state, payload) {
         state.registration.submitting = true;
         state.registration.buttonText = 'Submitting';
