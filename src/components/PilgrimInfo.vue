@@ -275,6 +275,7 @@ export default {
 
 <style lang="css" scoped>
 .pilgrim-info-container .box-card {
+    margin-top: 80px;
     width: 800px;
 }
 

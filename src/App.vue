@@ -1,5 +1,18 @@
 <template>
     <div id="app">
+        <el-menu theme="dark" :default-active="activeIndex" class="luform-menu" mode="horizontal" @select="handleSelect">
+            <el-menu-item index="1">Pilgrim Registration</el-menu-item>
+            <el-submenu index="2">
+                <template slot="title">Sponsors</template>
+                <el-menu-item index="2-1">Login</el-menu-item>
+                <el-menu-item index="2-2">Register</el-menu-item>
+            </el-submenu>
+            <el-submenu index="3">
+                <template slot="title">Pastors</template>
+                <el-menu-item index="3-1">Login</el-menu-item>
+                <el-menu-item index="3-2">Register</el-menu-item>
+            </el-submenu>
+        </el-menu>
         <router-view></router-view>
         <div class="footer">
             &copy; 2017 http://artisticrevolution.com
@@ -20,7 +33,13 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
+}
+
+.luform-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 .el-alert {
