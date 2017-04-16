@@ -80,4 +80,7 @@ export default {
 </script>
 
 <style lang="css">
+    .box-card {
+        margin-top: 80px;
+    }
 </style>

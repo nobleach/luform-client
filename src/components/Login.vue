@@ -37,6 +37,7 @@ export default {
     }
     .box-card {
         margin: 0 auto;
+        margin-top: 80px;
         width: 480px;
     }
 
