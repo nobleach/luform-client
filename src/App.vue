@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <el-menu theme="dark" :router="true" :default-active="activeIndex" class="luform-menu" mode="horizontal" @select="handleSelect">
+        <el-menu theme="dark" :router="true" :default-active="activeIndex" class="luform-menu" mode="horizontal">
             <el-menu-item index="/">Pilgrim Registration</el-menu-item>
             <el-submenu index="2">
                 <template slot="title">Sponsors</template>
@@ -10,7 +10,7 @@
             <el-submenu index="3">
                 <template slot="title">Pastors</template>
                 <el-menu-item index="/login">Login</el-menu-item>
-                <el-menu-item index="/regsiter">Register</el-menu-item>
+                <el-menu-item index="/register">Register</el-menu-item>
             </el-submenu>
             <svg version="1.1" class="luform-menu-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 279.1 55.2" style="enable-background:new 0 0 279.1 55.2;" xml:space="preserve">
