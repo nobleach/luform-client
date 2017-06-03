@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
 import PilgrimInfo from '@/components/PilgrimInfo';
-import SponsorInfo from '@/components/SponsorInfo';
+import PilgrimList from '@/components/PilgrimList';
 
 Vue.use(Router);
 
@@ -17,8 +17,8 @@ export default new Router({
         },
         {
             path: '/sponsor/:sponsor_id',
-            name: 'Sponsor a Pilgrim',
-            component: SponsorInfo
+            name: 'Pilgrims you may sponsor',
+            component: PilgrimList
         },
         {
             path: '/login',

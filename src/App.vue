@@ -3,12 +3,7 @@
         <el-menu theme="dark" :router="true" :default-active="activeIndex" class="luform-menu" mode="horizontal">
             <el-menu-item index="/">Pilgrim Registration</el-menu-item>
             <el-submenu index="2">
-                <template slot="title">Sponsors</template>
-                <el-menu-item index="/login">Login</el-menu-item>
-                <el-menu-item index="/register">Register</el-menu-item>
-            </el-submenu>
-            <el-submenu index="3">
-                <template slot="title">Pastors</template>
+                <template slot="title">Sponsors &amp; Pastors</template>
                 <el-menu-item index="/login">Login</el-menu-item>
                 <el-menu-item index="/register">Register</el-menu-item>
             </el-submenu>
