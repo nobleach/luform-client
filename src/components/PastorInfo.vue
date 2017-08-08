@@ -43,16 +43,7 @@ export default {
     data() {
         return {
             ruleForm: {
-                firstname: '',
-                lastname: '',
-                email: '',
-                state: '',
-                bestcalltime: '',
-                over18: false,
-                maritalstatus: '',
-                specialneeds: [],
-                sponsorid: '',
-                signed: false
+
             },
             rules: {
                 firstname: [
