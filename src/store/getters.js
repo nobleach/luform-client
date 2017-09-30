@@ -25,3 +25,7 @@ export const getIsPilgrimFormSubmitting = state => {
 export const getPilgrimFormErrorText = state => {
     return state.pilgrimRegistration.errorText;
 };
+
+export const getSponsorSubmitButtonText = state => {
+    return state.sponsorReview.buttonText;
+};

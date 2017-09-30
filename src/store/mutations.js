@@ -5,6 +5,9 @@ import {
     REGISTRATION_FAILURE,
     REGISTRATION_SUBMIT,
     REGISTRATION_SUCCESS,
+    SPONSOR_REVIEW_FAIL,
+    SPONSOR_REVIEW_SUBMIT,
+    SPONSOR_REVIEW_SUCCESS,
     SPONSORS_LOAD,
     SPONSORS_LOAD_FAIL,
     SPONSORS_LOAD_SUCCESS
@@ -20,7 +23,7 @@ export const mutations = {
 
     [PILGRIM_REGISTRATION_SUCCESS](state, payload) {
         state.pilgrimRegistration.submitting = false;
-        state.pilgrimRegistration.buttonText = 'Register';
+        state.pilgrimRegistration.buttonText = 'Submitted';
         state.pilgrimRegistration.errorText = '';
     },
 
@@ -28,6 +31,24 @@ export const mutations = {
         state.pilgrimRegistration.errorText = error;
         state.pilgrimRegistration.submitting = false;
         state.pilgrimRegistration.buttonText = 'Register';
+    },
+
+    [SPONSOR_REVIEW_SUBMIT](state, error) {
+        state.sponsorReview.errorText = '';
+        state.sponsorReview.submitting = true;
+        state.sponsorReview.buttonText = 'Submitting';
+    },
+
+    [SPONSOR_REVIEW_SUCCESS](state, error) {
+        state.sponsorReview.errorText = '';
+        state.sponsorReview.submitting = false;
+        state.sponsorReview.buttonText = 'Submitted';
+    },
+
+    [SPONSOR_REVIEW_FAIL](state, error) {
+        state.sponsorReview.errorText = error;
+        state.sponsorReview.submitting = false;
+        state.sponsorReview.buttonText = 'Submit';
     },
 
     [REGISTRATION_SUBMIT](state, payload) {

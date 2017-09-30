@@ -23,6 +23,12 @@ const state = {
         errorText: '',
         names: []
     },
+    sponsorReview: {
+        buttonText: 'Submit',
+        loading: false,
+        loaded: false,
+        errorText: ''
+    },
     pilgrimRegistration: {
         buttonText: 'Register',
         loading: false,

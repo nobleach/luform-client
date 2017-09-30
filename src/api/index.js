@@ -20,3 +20,7 @@ export function getPilgrimsForSponsorId(sponsorId) {
 export function createPilgrimRegistration(formValues) {
     return axios.post(`${config.urlBase}/pilgrims`, formValues);
 }
+
+export function createSponsorReview(formValues) {
+    return axios.post(`${config.urlBase}/sponsors`, formValues);
+}

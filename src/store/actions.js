@@ -1,6 +1,7 @@
 import {
     createLogin,
     createPilgrimRegistration,
+    createSponsorReview,
     getSponsors
 } from '../api';
 import {
@@ -12,7 +13,10 @@ import {
     REGISTRATION_SUCCESS,
     SPONSORS_LOAD,
     SPONSORS_LOAD_FAIL,
-    SPONSORS_LOAD_SUCCESS
+    SPONSORS_LOAD_SUCCESS,
+    SPONSOR_REVIEW_FAIL,
+    SPONSOR_REVIEW_SUBMIT,
+    SPONSOR_REVIEW_SUCCESS
 } from './mutation-types';
 
 // destructure `commit` out of store
@@ -61,5 +65,21 @@ export const getSponsorsList = ({ commit }) => {
         })
         .catch(error => {
             commit(SPONSORS_LOAD_FAIL, error);
+        });
+};
+
+export const sendSponsorReview = ({ commit }, payload) => {
+    commit(SPONSOR_REVIEW_SUBMIT);
+    createSponsorReview(payload)
+        .then(response => {
+            if (response.data) {
+                commit(SPONSOR_REVIEW_SUCCESS, response);
+            } else {
+                const error = response.data.error;
+                commit(SPONSOR_REVIEW_FAIL, error.text);
+            }
+        })
+        .catch(() => {
+            commit(SPONSOR_REVIEW_FAIL, 'Error, please ensure form is filled out correctly.');
         });
 };
