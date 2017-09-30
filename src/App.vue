@@ -2,8 +2,9 @@
     <div id="app">
         <el-menu theme="dark" :router="true" :default-active="activeIndex" class="luform-menu" mode="horizontal">
             <el-menu-item index="/">Pilgrim Registration</el-menu-item>
+            <el-menu-item index="/sponsor">Sponsor a Pilgrim</el-menu-item>
             <el-submenu index="2">
-                <template slot="title">Sponsors &amp; Pastors</template>
+                <template slot="title">Pastor Login</template>
                 <el-menu-item index="/login">Login</el-menu-item>
                 <el-menu-item index="/register">Register</el-menu-item>
             </el-submenu>
