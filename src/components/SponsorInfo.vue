@@ -4,8 +4,7 @@
             v-if="errorText !== ''"
             :title="errorText"
             type="error"
-            show-icon
-        >
+            show-icon>
         </el-alert>
         <el-card class="box-card">
             <h3>Sponsorship Information</h3>
@@ -183,6 +182,8 @@
                         </el-form-item>
                     </el-col>
                 </el-row>
+                <el-button>Cancel</el-button>
+                <el-button type="primary" v-on:click="submitSponsorReview" v-bind:disabled="ruleForm.email === ''" v-bind:loading="submitting">{{getSubmitButtonText}}</el-button>
             </el-form>
         </el-card>
     </div>
@@ -235,11 +236,9 @@ export default {
 <style lang="css" scoped>
 .sponsor-info-container .box-card {
     width: 800px;
-
 }
 
-.text
-{
+.text {
    font-size:14px;
    text-align:left;
 }
