@@ -21,17 +21,12 @@
                 </el-row>
 
                 <el-row :gutter="20">
-                    <el-col :span="8">
-                        <el-form-item prop="firstname">
-                            <el-input class="registration-input" placeholder="First name" v-model="ruleForm.firstname"></el-input>
+                    <el-col :span="14">
+                        <el-form-item prop="fullname">
+                            <el-input class="registration-input" placeholder="Full Name name" v-model="ruleForm.fullname"></el-input>
                         </el-form-item>
                     </el-col>
-                    <el-col :span="8">
-                        <el-form-item prop="lastname">
-                            <el-input class="registration-input" placeholder="Last name" v-model="ruleForm.lastname"></el-input>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :span="8">
+                    <el-col :span="10">
                         <el-form-item prop="email">
                             <el-input class="registration-input" placeholder="Email address" v-model="ruleForm.email"></el-input>
                         </el-form-item>
@@ -71,9 +66,15 @@
                         </el-form-item>
                     </el-col>
                     <el-col :span="8">
-                        <el-form-item prop="bestcalltime">
-                            <el-input class="registration-input" placeholder="Best Time To Call" v-model="ruleForm.bestcalltime"></el-input>
-                        </el-form-item>
+                        <el-time-select
+                            v-model="ruleForm.bestcalltime"
+                            :picker-options="{
+                                start: '08:30',
+                                step: '00:15',
+                                end: '18:30'
+                            }"
+                            placeholder="Best time to call">
+                        </el-time-select>
                     </el-col>
                 </el-row>
 
